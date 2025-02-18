@@ -13,7 +13,8 @@ import (
 	"encoding/json"
 )
 
-const numRequests = 0
+const numRequests = 10000
+const needBalance = 10000
 
 type BalanceResponse struct {
 	Balance int `json:"balance"`
@@ -45,7 +46,7 @@ func main() {
 	for _, url := range routes {
 	    initialBalance := getBalance(url)
     	log.Printf("Начальный баланс: %d\n", initialBalance)
-		setBalance(url, 10000 - initialBalance)
+		setBalance(url, needBalance - initialBalance)
 
 		responseCounts := make(map[string]int)
 
