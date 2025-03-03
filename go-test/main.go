@@ -26,8 +26,9 @@ var client = &http.Client{
 
 func main() {
 	routes := []string{
-		"http://localhost:3000/approach/transaction-pessimistic-locking/balance",
-		"http://localhost:3000/approach/self/balance",
+		"http://localhost:3000/api/users/balance/default",
+		"http://localhost:3000/api/users/balance/pessimistic",
+		"http://localhost:3000/api/users/balance/optimistic",
 	}
 
 	logFile, err := os.OpenFile("responses.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
